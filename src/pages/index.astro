@@ -4,15 +4,36 @@ import Layout from '../layouts/Layout.astro';
 const features = [
   {
     title: "userArray",
-    description: "A purpose-built platform for teams who build in public."
+    description: "linear companion for open source and user facing teams."
   },
   {
-    title: "🚀 What we're building",
-    description: "A modern platform that helps teams share their journey and get valuable feedback from the community."
-  },
-  {
-    title: "💡 Core Features",
-    description: "• Lightweight: Sub-1% CPU usage, ultra-low RAM\n• Fast: 120-fps, instant startup, no spinners\n• Simple: Powerful, yet easy to use, clutter-free\n• Smart: AI-powered workflows and automations"
+    title: "🚀 Features",
+    description: `<div class="space-y-2 text-[13px]">
+      <div class="flex">
+        <span class="mr-2">•</span>
+        <div>
+          <strong class="text-gray-900">Feedback Board</strong>: Collect ideas and feedback from your users. Understand the most in-demand suggestions and send them to triage when it matters.
+        </div>
+      </div>
+      <div class="flex">
+        <span class="mr-2">•</span>
+        <div>
+          <strong class="text-gray-900">Custom Boards</strong>: Share specific sets of issues, cycle views, or projects to show how the product is being built and engage your users in the journey.
+        </div>
+      </div>
+      <div class="flex">
+        <span class="mr-2">•</span>
+        <div>
+          <strong class="text-gray-900">Notifications</strong>: Notify users about the status of their feedback and show them how their input contributes to production.
+        </div>
+      </div>
+      <div class="flex">
+        <span class="mr-2">•</span>
+        <div>
+          <strong class="text-gray-900">Changelog</strong>: Publish pre-drafted without juggling between merged pull requests and closed Linear issues.
+        </div>
+      </div>
+    </div>`
   },
   {
     title: "🔗 Links",
@@ -53,7 +74,7 @@ const features = [
     repos: [
       {
         name: "sajdakabir/userarray",
-        description: "userarray turbo repo",
+        description: "linear companion for open source and user facing teams.",
         language: "TypeScript",
         stars: 0,
         forks: 2
@@ -69,7 +90,7 @@ const stats = {
 };
 ---
 
-<Layout title="userarray - Built for Teams">
+<Layout title="userarray - linear companion for open source and user facing teams.">
   <div class="min-h-screen bg-white text-gray-900 font-['Inter'] py-16">
     <div class="max-w-[900px] mx-auto px-8">
       <!-- GitHub-style container -->
@@ -83,7 +104,7 @@ const stats = {
               <span class="text-gray-900">landing.md</span>
             </div>
             <a 
-              href="https://feedback.userarray.com" 
+              href="https://github.com/sajdakabir/userarray-readme" 
               class="text-gray-600 hover:text-gray-900 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
@@ -104,7 +125,7 @@ const stats = {
                 {feature.title}
               </h3>
               {feature.description && (
-                <p class="text-[13px] text-gray-600 leading-relaxed whitespace-pre-line">{feature.description}</p>
+                <p class="text-[13px] text-gray-600 leading-relaxed whitespace-pre-line space-y-1.5" set:html={feature.description}></p>
               )}
               {feature.links && (
                 <div class="text-[13px] text-gray-600 leading-relaxed space-y-1">
